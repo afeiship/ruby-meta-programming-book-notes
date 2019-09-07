@@ -9,7 +9,12 @@
 - 类
 - 方法
 
-## 运行时
+## 分类
+- dynamic metaprogramming
+  - Ruby 讨论的这个
+- static metaprogramming
+  - 代码生成器: Thor/Yoeman
+  - 编译器：C++的模板，会先把这个代码生成好，然后再执行生成的代码
 
 ## 内省 introspection
 
