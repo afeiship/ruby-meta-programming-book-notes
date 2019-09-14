@@ -26,7 +26,18 @@ class User
   end
 
   def method_missing(name, *args)
-    @source_data.send("get_#{name}")
+    is_respond = @source_data.respond_to?("get_#{name}")
+    if is_respond
+      @source_data.send("get_#{name}")
+    else
+      #  OR YOU CAN Call SUPER `super`
+      puts "NO METHOD!"
+    end
+  end
+
+  # Make sure respond_to? method worked!
+  def respond_to_missing?(method, include_private = false)
+    @source_data.respond_to?("get_#{method}") || super
   end
 end
 
@@ -36,4 +47,5 @@ user = User.new(data)
 puts user.name     # => chh
 puts user.email    # => user@example.tw
 puts user.location # => Taiwan
-puts user.aaa
+puts user.respond_to?("name")
+puts user.respond_to?("aaa")
