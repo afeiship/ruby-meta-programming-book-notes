@@ -15,6 +15,14 @@
 - class/module 里的代码会被立即执行
 - def 只有在方法调用的时候才会执行
 
+## 用方法代替 class/def 就可以 cross the gate
+- 方法代替作用域门，就可以让变量从一个作用域看到另一个作用域中的变量
+- 这种技巧称为：嵌套方法作用域 或 —— 扁平化作用域
+
+## replacer tricks
+- class - > Class.new
+- module - > Module.new
+- def -> define_method
 
 
 
