@@ -23,3 +23,6 @@ obj.teach_match(2, 3) do |x, y|
   puts x * y
 end
 ```
+
+## &opr 
+- 如果没有，这个值为 nil
